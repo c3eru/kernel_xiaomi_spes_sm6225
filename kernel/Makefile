@@ -131,6 +131,8 @@ $(obj)/configs.o: $(obj)/config_data.h
 targets += config_data.gz
 ifdef CONFIG_TARGET_PROJECT_K7T
 $(obj)/config_data.gz: arch/arm64/configs/stock_defconfig FORCE
+ifdef CONFIG_TARGET_PROJECT_K7TN
+$(obj)/config_data.gz: arch/arm64/configs/stock_defconfig FORCE
 else
 $(obj)/config_data.gz: $(KCONFIG_CONFIG) FORCE
 endif
